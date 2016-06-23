@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- @file config.xml -->
+<!-- @author Juan José Escobar Pérez -->
+<!-- @date 25/06/2015 -->
+<!-- @brief File with the program configurations -->
+
+<Config>
+	<DataBaseFileName>data-890x4200.txt</DataBaseFileName>
+	<NGenerations>0</NGenerations>
+	<MaxFeatures>216</MaxFeatures>
+	<TournamentSize>2</TournamentSize>
+	<DataFileName>gnuplot/dataPareto.txt</DataFileName>
+	<PlotFileName>gnuplot/plot</PlotFileName>
+	<ImageFileName>gnuplot/paretoFront</ImageFileName>
+</Config>
