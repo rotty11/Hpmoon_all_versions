@@ -8,7 +8,7 @@
 <Config>
 	<DataBaseFileName>data-178x480.txt</DataBaseFileName>
 	<NGenerations>0</NGenerations>
-	<MaxFeatures>216</MaxFeatures>
+	<MaxFeatures>10</MaxFeatures>
 	<TournamentSize>2</TournamentSize>
 	<DataFileName>gnuplot/dataPareto.txt</DataFileName>
 	<PlotFileName>gnuplot/plot</PlotFileName>
