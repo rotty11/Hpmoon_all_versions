@@ -6,7 +6,7 @@
 <!-- @brief File with the program configurations -->
 
 <Config>
-	<DataBaseFileName>data-890x4200.txt</DataBaseFileName>
+	<DataBaseFileName>data-178x480.txt</DataBaseFileName>
 	<NGenerations>0</NGenerations>
 	<MaxFeatures>216</MaxFeatures>
 	<TournamentSize>2</TournamentSize>
