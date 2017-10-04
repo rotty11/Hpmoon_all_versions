@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- @file config.xml -->
+<!-- @author Juan José Escobar Pérez -->
+<!-- @date 25/06/2015 -->
+<!-- @brief File with the program configurations -->
+
+<Config>
+	<NSubpopulations>1</NSubpopulations>
+	<SubpopulationSize>240</SubpopulationSize>
+	<NInstances>178</NInstances>
+	<NExecutions>1</NExecutions>
+	<DataBaseFileName>db/data-178x480.txt</DataBaseFileName>
+	<NMigrations>1</NMigrations>
+	<NGenerations>0</NGenerations>
+	<MaxFeatures>10</MaxFeatures>
+	<TournamentSize>2</TournamentSize>
+	<DataFileName>gnuplot/dataPareto</DataFileName>
+	<PlotFileName>gnuplot/plot</PlotFileName>
+	<ImageFileName>gnuplot/paretoFront</ImageFileName>
+	<OpenCL>
+		<NDevices>2</NDevices>
+		<Devices>Tesla K40m,Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz</Devices>
+		<ComputeUnits>15,32</ComputeUnits>
+		<WiLocal>1024,1</WiLocal>
+		<MaxIndividualsOnGpuKernel>10000</MaxIndividualsOnGpuKernel>
+		<KernelsFileName>src/evaluation.cl</KernelsFileName>
+	</OpenCL>
+</Config>
