@@ -50,8 +50,8 @@ Config::Config(const int argc, const char **argv) {
 	parser.addExample("./bin/hpmoon -h");
 	parser.addExample("./bin/hpmoon -l");
 	parser.addExample("mpirun --host localhost,localhost ./bin/hpmoon -conf \"config.xml\" -ns 2 -db \"db/datos.txt\"");
-	parser.addExample("mpirun --host node0,node1 --map-by-node ./bin/hpmoon -conf \"config.xml\" -ss 480 -ngm 3 -nlm 2 -db \"db/datos.txt\"");
-	parser.addExample("mpirun --host node0,node1 --map-by-node ./bin/hpmoon -conf \"config.xml\" -ts 4 -maxf 85 -plotimg \"imgPareto\" -db \"db/datos.txt\"");
+	parser.addExample("mpirun --host node0,node1 --map-by node ./bin/hpmoon -conf \"config.xml\" -ss 480 -ngm 3 -nlm 2 -db \"db/datos.txt\"");
+	parser.addExample("mpirun --host node0,node1 --map-by node ./bin/hpmoon -conf \"config.xml\" -ts 4 -maxf 85 -plotimg \"imgPareto\" -db \"db/datos.txt\"");
 
 	// Options
 	parser.addArg("-h", false, "Display usage instructions."); // Display help
