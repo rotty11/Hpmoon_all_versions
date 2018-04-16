@@ -49,9 +49,9 @@ Config::Config(const int argc, const char **argv) {
 	CmdParser parser("High computing: Genetic algorithm in OpenCL and OpenMP, and distributed using OpenMPI.", "mpirun -np [N]>1 ./bin/hpmoon [OPTIONS]", "Cluster HPMoon (C) 2018 v6.0");
 	parser.addExample("./bin/hpmoon -h");
 	parser.addExample("./bin/hpmoon -l");
-	parser.addExample("mpirun --host localhost,localhost --map-by-node ./bin/hpmoon -conf \"config.xml\" -nd 3 -cu 8,13,24 -wl 512,1024,1 -db \"db/datos.txt\"");
-	parser.addExample("mpirun --host localhost,node0,node1 --map-by-node ./bin/hpmoon -conf \"config.xml\" -nd 1 -cu 4 -wl 1 -db \"db/datos.txt\"");
-	parser.addExample("mpirun -np 4 ./bin/hpmoon -conf \"config.xml\" -nexec 1 -ts 4 -maxf 85 -plotimg \"imgPareto\" -db \"db/datos.txt\"");
+	parser.addExample("mpirun --host localhost,localhost ./bin/hpmoon -conf \"config.xml\" -ns 2 -db \"db/datos.txt\"");
+	parser.addExample("mpirun --host node0,node1 --map-by-node ./bin/hpmoon -conf \"config.xml\" -ss 480 -ngm 3 -nlm 2 -db \"db/datos.txt\"");
+	parser.addExample("mpirun --host node0,node1 --map-by-node ./bin/hpmoon -conf \"config.xml\" -ts 4 -maxf 85 -plotimg \"imgPareto\" -db \"db/datos.txt\"");
 
 	// Options
 	parser.addArg("-h", false, "Display usage instructions."); // Display help
@@ -220,17 +220,17 @@ Config::Config(const int argc, const char **argv) {
 		if (this -> nDevices > 0) {
 			std::string option;
 
-			////////////////////// -devn value
+			////////////////////// Device Name value
 			option = parent -> NextSiblingElement("Devices") -> GetText();
 			this -> nDevices = std::min(this -> nDevices, split(option, this -> devices));
 
 
-			////////////////////// -cu value
+			////////////////////// Compute Units value
 			option = parent -> NextSiblingElement("ComputeUnits") -> GetText();
 			check(split(option, this -> computeUnits) < this -> nDevices, CFG_ERROR_CU_LOWER);
 
 
-			////////////////////// -wl value
+			////////////////////// Local work-items value
 			option = parent -> NextSiblingElement("WiLocal") -> GetText();
 			check(split(option, this -> wiLocal) < this -> nDevices, CFG_ERROR_WI_LOWER);
 
