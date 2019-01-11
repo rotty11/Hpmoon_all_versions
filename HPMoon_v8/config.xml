@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- @file config.xml -->
+<!-- @author Juan José Escobar Pérez -->
+<!-- @date 25/06/2015 -->
+<!-- @brief File with the program configurations -->
+
+<Config>
+	<NSubpopulations>1</NSubpopulations>
+	<SubpopulationSize>120</SubpopulationSize>
+	<NGlobalMigrations>1</NGlobalMigrations>
+	<NGenerations>0</NGenerations>
+	<MaxFeatures>10</MaxFeatures>
+	<DataFileName>gnuplot/dataPareto</DataFileName>
+	<PlotFileName>gnuplot/plot</PlotFileName>
+	<ImageFileName>gnuplot/paretoFront</ImageFileName>
+	<TournamentSize>2</TournamentSize>
+	<TrDatabase>
+		<NInstances>178</NInstances>
+		<FileName>db/data-178x480.txt</FileName>
+		<Normalize>1</Normalize>
+	</TrDatabase>
+	<Devices>
+
+		<!-- Worker 0 (MPI Process 1) -->
+		<NDevices>2</NDevices>
+		<Names>GeForce GTX 1080,GeForce GTX 770</Names>
+		<ComputeUnits>20,8</ComputeUnits>
+		<WiLocal>1024,1024</WiLocal>
+		<CpuThreads>4</CpuThreads>
+
+		<!-- Worker 1 (MPI Process 2) -->
+		<NDevices>0</NDevices>
+		<Names>Quadro K2000</Names>
+		<ComputeUnits>2</ComputeUnits>
+		<WiLocal>1024</WiLocal>
+		<CpuThreads>4</CpuThreads>
+
+		<!-- Worker N (MPI Process N+1) -->
+		<!-- <NDevices>X</NDevices> -->
+		<!-- <Names>Device1,Device2,...,DeviceX</Names> -->
+		<!-- <ComputeUnits>CU1,CU2,...,CUX</ComputeUnits> -->
+		<!-- <WiLocal>WL1,WL2,...,WLX</WiLocal> -->
+		<!-- <CpuThreads>CT</CpuThreads> -->
+
+		<KernelsFileName>src/evaluation.cl</KernelsFileName>
+
+	</Devices>
+</Config>
